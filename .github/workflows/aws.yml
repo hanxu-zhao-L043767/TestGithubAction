@@ -1,0 +1,30 @@
+
+
+name: Deploy to Amazon Lambda
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: '版本号'
+        required: true
+        default: 'rel-vx.x.x'
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: AKIAY3Y66BLIZCCGBZAJ
+        aws-secret-access-key: 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
+        aws-region: ap-northeast-1
+
+
