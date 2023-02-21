@@ -30,6 +30,6 @@ jobs:
     - name: deploy
       run: |
         zip -j deploy.zip ./lambda-script/nodejs/*
-        aws lambda update-function-code --function-name=MyTestFunction --zip-file=fileb://deploy.zip
+        aws lambda update-function-code --function-name=mytestfunc --zip-file=fileb://deploy.zip
 
 
