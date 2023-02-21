@@ -26,5 +26,10 @@ jobs:
         aws-access-key-id: AKIAY3Y66BLIZCCGBZAJ
         aws-secret-access-key: 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
         aws-region: ap-northeast-1
+        
+    - name: deploy
+      run: |
+        zip -j deploy.zip ./lambda-script/nodejs/*
+        aws lambda update-function-code --function-name=MyTestFunction --zip-file=fileb://deploy.zip
 
 
